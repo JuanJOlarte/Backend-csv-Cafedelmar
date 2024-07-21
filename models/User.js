@@ -1,4 +1,4 @@
-const {Schema, model} = require('mongoose');
+const { Schema, model } = require('mongoose');
 
 //modelo de usuario 
 const userSchema = Schema({
@@ -6,12 +6,14 @@ const userSchema = Schema({
         type: String,
         require: true,
         unique: true,
-    }, 
-    password:{
+    },
+    password: {
         type: String,
         require: true,
     }
 })
 
+
+
 module.exports = model('Users', userSchema)
-//crea el modelo o estructura y se exporta 
+    //crea el modelo o estructura y se exporta
