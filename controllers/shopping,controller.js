@@ -57,7 +57,6 @@ const getShoppById = async(req,res) => {
 
 
 
-
 module.exports= {
     createShopping,
     getShoppById
