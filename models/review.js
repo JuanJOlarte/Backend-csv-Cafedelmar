@@ -1,6 +1,6 @@
 const { Schema, model } = require('mongoose');
 
-const reviewSchema = schema({
+const reviewSchema = Schema({
     user: {
         type: Number,
         unique: true

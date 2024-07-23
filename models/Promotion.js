@@ -1,6 +1,6 @@
 const { Schema, model } = require('mongoose');
 
-const promotionsSchema = schema({
+const promotionSchema = Schema({
     code: {
         type: String,
         unique: flase
@@ -19,4 +19,4 @@ const promotionsSchema = schema({
     }
 })
 
-module.exports = model('pay', paySchema)
+module.exports = model('Promotions', promotionSchema)

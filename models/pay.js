@@ -1,6 +1,6 @@
 const { Schema, model } = require('mongoose');
 
-const reviewSchema = schema({
+const paySchema = Schema({
     user: {
         type: String,
         unique: false
@@ -15,4 +15,4 @@ const reviewSchema = schema({
     }
 })
 
-module.exports = model('pay', paySchema)
+module.exports = model('Pays', paySchema)
