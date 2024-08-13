@@ -1,23 +1,23 @@
 const { Schema, model } = require('mongoose');
 
 const reserveSchema = Schema({
-    user: {
+    name: {
         type: String,
         require: true,
         unique: true
     },
-    date: {
-        type: Date,
+    email: {
+        type: String,
         require: true
     },
-    guests: {
+    number: {
         type: Number,
         require: true
     },
-    specialRequest: {
-        type: String,
+    date: {
+        type: Date,
         require: false
     }
 })
 
-module.exports = model('Reserva', reserveSchema)
+module.exports = model('Reserve', reserveSchema)
