@@ -15,7 +15,7 @@ const reserveSchema = Schema({
         require: true
     },
     date: {
-        type: Date,
+        type: String,
         require: false
     }
 })
