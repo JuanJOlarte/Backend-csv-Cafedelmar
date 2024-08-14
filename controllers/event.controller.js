@@ -24,14 +24,77 @@ const createEvent = async(req, res) =>{
     } catch (error) {
         console.log(error)
         return res.status(500).json({
-            ok:true,
+            ok:false,
             msg: `contact to developer, internal error`
         })
     }
 }
 
+const getEventById = async(req,res) => {
+    const id = req.params.id
+    try {
+        const event = await Event.findById(id)
+        if(!event) return res.status(400).json({
+            ok:false,
+            msg: `Event not found`
+        })
+
+        return res.status(200).json({
+            ok: true,
+            msg: ` el evento es`,
+            event: event
+        })
+    } catch (error) {
+        console.log(error)
+        return res.status(500).json({
+            ok: false,
+            msg: `Error Identify Event for id`
+        })
+    }
+}
+
+const getAllEvent = async(req,res) =>{
+    try {
+        const event = await Event.find()
+        return res.status(200).json({
+            ok: true,
+            event: event
+        })
+    } catch (error) {
+        console.log(error)
+        return res.status(500).json({
+            ok: false,
+            msg: `Error getting events, contact to support`
+        })
+    }
+}
+
+const deleteEventById = async(req, res) => {
+    const id = req.params.id
+    try {
+        const event = await Event.findByIdAndDelete(id)
+        if(!event) return res.status(400).json({
+            ok: false,
+            msg: `Error deleting event with Id ${id}`
+        })
+
+        return res.status(200).json({
+            ok:true,
+            msg: `Product deleted!!`
+        })
+    } catch (error) {
+        console.log(error)
+        return res.status(500).json({
+            ok: false,
+            msg: `Error deleting product, contact to support`
+        })   
+    }
+}
 
 
 module.exports = {
-    createEvent
+    createEvent,
+    getEventById,
+    getAllEvent,
+    deleteEventById
 }

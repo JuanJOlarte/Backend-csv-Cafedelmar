@@ -15,7 +15,10 @@ const EventSchema = Schema ({
         require: true,
     },
     value: {
-        type: String,
+        type: Number,
         require: true
     }
 })
+
+
+module.exports =  model ('Event', EventSchema)

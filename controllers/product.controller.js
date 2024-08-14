@@ -24,7 +24,7 @@ const createProduct = async(req,res) => {
     } catch (error){
         console.log(error)
         return res.status(500).json({
-            ok: true,
+            ok: false,
             msg: `contact to Developer, internal error`
         })
     }
