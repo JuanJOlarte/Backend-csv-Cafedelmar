@@ -6,6 +6,10 @@ const productSchema = Schema({
         require: true,
         unique: true
     },
+    feature: {
+        type: Boolean,
+        require: true,
+    },
     img: {
         type: String,
         require: true,

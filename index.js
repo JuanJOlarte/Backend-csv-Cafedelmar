@@ -4,6 +4,7 @@ const express = require('express')
 const app = express()
 //9. configurar dotenv
 const dotenv = require('dotenv')
+const cors = require('cors')
 //conecta el api
 const api = require('./routes/api.routes')
 dotenv.config();
@@ -16,6 +17,7 @@ connectDatabase();
 //5. se instalan dos middlewares importantes 
 app.use(express.json());    //permite leer json 
 app.use(express.urlencoded({extended: false})); 
+app.use(cors())
 //trae todo lo de app que trae express 
 app.use('/', api)
 //2. poner a escuchar el servidor

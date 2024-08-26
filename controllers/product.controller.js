@@ -1,7 +1,7 @@
 const Product = require ('./../models/Product')
 
 const createProduct = async(req,res) => {
-    const { name, img, description, value} = req.body
+    const { name,feature, img, description, value} = req.body
 
     try{
         const product = await Product.findOne({name: name})
@@ -11,6 +11,7 @@ const createProduct = async(req,res) => {
         })
         const dbProduct = new Product({
             name: name,
+            feature: feature,
             img: img,
             description: description,
             value: value
